@@ -15,7 +15,7 @@ async function getPopularMovies(page: number) {
   return res.json();
 }
 
-const page = async ({ searchParams }: Props) => {
+const Page = async ({ searchParams }: Props) => {
   const page = searchParams?.page || 1;
 
   const popularMovies = await getPopularMovies(page);
@@ -41,4 +41,4 @@ const page = async ({ searchParams }: Props) => {
   );
 };
 
-export default page;
+export default Page;

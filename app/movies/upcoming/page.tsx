@@ -12,10 +12,14 @@ async function getUpcomingMovies(page: number) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&language=en-US&page=${page}`
   );
-  return res.json();
+
+  const data = await res.json();
+  console.log(data); 
+  console.log(process.env.API_KEY)
+  return data;
 }
 
-const page = async ({ searchParams }: Props) => {
+const Page = async ({ searchParams }: Props) => {
   const page = searchParams?.page || 1;
 
   const upcomingMovies = await getUpcomingMovies(page);
@@ -41,4 +45,4 @@ const page = async ({ searchParams }: Props) => {
   );
 };
 
-export default page;
+export default Page;

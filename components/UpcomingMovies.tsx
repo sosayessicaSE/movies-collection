@@ -15,9 +15,10 @@ const UpcomingMovies = ({ upcomingMovies }: { upcomingMovies: any }) => {
         </Link>
       </div>
       <div className="grid grid-cols-4 mt-4 gap-4">
-        {upcomingMovies.results.slice(0, 4).map((movie: IMovieCard) => (
-          <MovieCard key={movie?.id} movie={movie} />
-        ))}
+      {upcomingMovies.results?.slice(0, 4).map((movie: IMovieCard) => (
+  <MovieCard key={movie?.id} movie={movie} />
+))}
+
       </div>
     </div>
   );

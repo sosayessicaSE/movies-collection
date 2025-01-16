@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import MovieCard, { IMovieCard } from "./MovieCard";
 
+
 const TopRatedMovies = ({ topRatedMovies }: { topRatedMovies: any }) => {
   return (
     <div className="flex flex-col mb-6">
@@ -15,9 +16,10 @@ const TopRatedMovies = ({ topRatedMovies }: { topRatedMovies: any }) => {
         </Link>
       </div>
       <div className="grid grid-cols-4 mt-4 gap-4">
-        {topRatedMovies.results.slice(0, 4).map((movie: IMovieCard) => (
-          <MovieCard key={movie?.id} movie={movie} />
-        ))}
+      {topRatedMovies.results?.slice(0, 4).map((movie: IMovieCard) => (
+  <MovieCard key={movie?.id} movie={movie} />
+))}
+
       </div>
     </div>
   );
