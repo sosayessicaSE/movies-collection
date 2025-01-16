@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['image.tmdb.org'], // Add the image domain here
+      domains: ['image.tmdb.org'], 
     },
   };
   
